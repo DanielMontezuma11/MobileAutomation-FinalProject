@@ -43,4 +43,11 @@ public class LoginScreen extends BaseScreen {
         WaitUtils.waitForVisibility(wait, logInAlert);
         return logInAlert.getText();
     }
+
+    public boolean hasExpectedElementsVisibleAndEnabled(){
+        WaitUtils.waitForVisibility(wait, email);
+        return email.isDisplayed() && email.isEnabled()
+                && password.isDisplayed() && password.isEnabled()
+                && loginBtn.isDisplayed() && loginBtn.isEnabled();
+    }
 }
